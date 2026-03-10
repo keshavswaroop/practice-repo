@@ -1,0 +1,10 @@
+name: Demo Pipeline
+on: workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone Repo
+              run: |
+                  echo "Clonning the repo"
