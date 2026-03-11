@@ -8,12 +8,15 @@ env:
 jobs:
     build:
         runs-on: ubuntu-latest
+        stratergy:
+            matrix:
+                ver: [1, 2, 3]
         steps:
             - name: Clone Repo
               run: |
                   echo "Clonning the repo ${{env.RepoName}}"
             - name: Version
-              run: echo "${{env.version}}"
+              run: echo "${{matrix.ver}}"
             - name: Create a file as we are not clonning the repo
               run: echo "Hi there, this is a test document" > test.txt
             - name: upload artifact
@@ -34,8 +37,8 @@ jobs:
                   name: artifact-test
             - name: Output document
               id: output_doc
-              # run: cat test.txt
-              run: cat artifact
+              run: cat test.txt
+            #   run: cat artifact
 
             - name: error
               if: failure() && steps.output_doc.outcome == 'failure'
