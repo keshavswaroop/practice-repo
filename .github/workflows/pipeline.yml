@@ -33,7 +33,9 @@ jobs:
               with:
                   name: artifact-test
             - name: Output document
-              run: cat test.txt
+              # run: cat test.txt
+              run: cat artifact
+              
             - name: error
               if: failure() && steps.download_artifact.outcome == 'failure'
               run: echo "Incorrect file name, cannot download"
