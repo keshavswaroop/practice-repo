@@ -1,10 +1,13 @@
 name: Demo Pipeline
 on: workflow_dispatch
 
+env:
+    RepoName: abc
+
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - name: Clone Repo
               run: |
-                  echo "Clonning the repo"
+                  echo "Clonning the repo ${{env.RepoName}}"
