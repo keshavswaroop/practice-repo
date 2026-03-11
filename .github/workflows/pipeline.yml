@@ -14,6 +14,8 @@ jobs:
                   echo "Clonning the repo ${{env.RepoName}}"
             - name: Version
               run: echo "${{env.version}}"
+            - name: Create a file as we are not clonning the repo
+              run: echo "Hi there, this is a test document" > test.txt
             - name: upload artifact
               uses: actions/upload-artifact@v4
               with:
