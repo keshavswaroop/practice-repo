@@ -21,7 +21,7 @@ jobs:
               with:
                   name: artifact-test
                   path: |
-                      test
+                      test.txt
 
     test:
         runs-on: ubuntu-latest
