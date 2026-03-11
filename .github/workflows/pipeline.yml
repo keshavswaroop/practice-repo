@@ -32,4 +32,4 @@ jobs:
               with:
                   name: artifact-test
             - name: Output document
-              run: cat artifact-test
+              run: cat test.txt
